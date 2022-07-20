@@ -203,11 +203,5 @@ class AppointmentController extends Controller
         return view('appointments.list')->with('doctor', $doctor);
     }
 
-    public function viewBook(){
-        return view('appointments.book')
-            ->with('doctors', Doctor::get())
-            ->with('patients', User::patient()->get())
-            ->with('departments', Department::all())
-            ->with('timeschedules', TimeSchedule::all());
-    }
+
 }

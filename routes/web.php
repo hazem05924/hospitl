@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\PatientController;
-use App\Http\Controllers\rayController;
-use App\Http\Controllers\testController;
+
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -119,4 +118,4 @@ Route::get('/getuserbyusertype/', 'PublicController@getUserByUserType')->name('g
 
 // Route::get('/create/patients/{id}', [PatientController::class, 'createPatient'])->name('createPatient');
 Route::get('/index/patients/{id}', [PatientController::class, 'indexPatient'])->name('indexPatient');
-Route::get('/books', [AppointmentController::class ,'viewBook'])->name('viewBook');
+Route::get('/books', [BookController::class ,'viewBook'])->name('viewBook');
