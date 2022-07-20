@@ -28,12 +28,13 @@
                         </div>
                     @endif
                     <!-- end:: Alert -->
-                    <div class="kt-input-icon kt-input-icon--right kt-subheader__search kt-hidden col-12">
-                        <input type="text" class="form-control" placeholder="بحث ..." id="generalSearch">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right">
-                            <span><i class="flaticon2-search-1"></i></span>
-                        </span>
-                    </div>
+                    <div class="input-icon col-md-2">
+                        <input type="text" class="form-control" placeholder="بحث باستخدام الاسم"
+                           name='first_name' @if( request()->first_name) value={{request()->first_name}} @endif/>
+                          <span>
+                              <i class="flaticon2-search-1 text-muted"></i>
+                          </span>
+                        </div>
 
                     <div class="kt-portlet__head-toolbar">
                         <div class="kt-portlet__head-wrapper">

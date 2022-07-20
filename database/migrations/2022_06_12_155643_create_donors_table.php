@@ -20,8 +20,9 @@ class CreateDonorsTable extends Migration
             $table->string('address')->nullable();
             $table->string('email');
             $table->bigInteger('donornumber')->nullable();
+            $table->string('blood_group')->nullable();
             $table->string('hospital')->nullable();
-            $table->string('type'); 
+            $table->string('type');
             $table->timestamps();
         });
     }

@@ -24,10 +24,11 @@ class CreateBloodBanksTable extends Migration
             $table->bigInteger('age')->nullable();
             $table->bigInteger('weight')->nullable();
             $table->bigInteger('donornumber')->nullable();
+            $table->string('blood_group')->nullable();
             $table->string('hospital')->nullable();
-            $table->string('type'); 
+            $table->string('type');
             $table->date('date');
-            $table->time('timeSlots');
+            $table->time('time')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();
         });

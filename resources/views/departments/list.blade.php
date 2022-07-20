@@ -23,8 +23,10 @@
                         </h3>
                         <span class="kt-subheader__separator kt-subheader__separator--v"></span>
 
+
                         <div class="kt-input-icon kt-input-icon--left kt-subheader__search kt-hidden col-12">
-                            <input type="text" class="form-control" placeholder="بحث ..." id="generalSearch">
+                            <input type="text" class="form-control" placeholder="بحث باستخدام الاسم"
+                               name='name_ar' @if( request()->name_ar) value={{request()->name_ar}} @endif/>
                             <span class="kt-input-icon__icon kt-input-icon__icon--left">
                                 <span><i class="flaticon2-search-1"></i></span>
                             </span>

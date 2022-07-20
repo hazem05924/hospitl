@@ -36,8 +36,8 @@ class CreateUsersTable extends Migration
             $table->string('educational_qualification')->nullable();
             $table->string('blood_group')->nullable();
             $table->string('blood_pressure')->nullable();
-            $table->foreignId('doctor_id');
-            $table->foreign('doctor_id')->on('doctors')->references('id');
+            $table->foreignId('doctor_id')->nullable();
+            $table->foreign('doctor_id')->on('doctors')->references('id')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

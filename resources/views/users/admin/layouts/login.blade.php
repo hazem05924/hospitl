@@ -57,8 +57,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="بحث..."
-                        aria-label="Search">
+                    <input type="text" class="form-control" placeholder="بحث باستخدام الاسم"
+                           name='first_name' @if( request()->first_name) value={{request()->first_name}} @endif/>
                     <div class="input-group-append">
                         <button class="btn btn-navbar" type="submit">
                             <i class="fa fa-search"></i>
@@ -529,7 +529,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="{{ url('medicines/') }}" class="nav-link ">
                                     <i class="nav-icon fa fa-dashboard"></i>
                                     <p>
-                                       الأدوية الصيدلية 
+                                       الأدوية الصيدلية
                                         <i class="right fa fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -564,7 +564,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="{{ url('/documents/') }}" class="nav-link ">
                                     <i class="nav-icon fa fa-dashboard"></i>
                                     <p>
-                                        الوثائق 
+                                        الوثائق
                                         <i class="right fa fa-angle-left"></i>
                                     </p>
                                 </a>
@@ -588,7 +588,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <a href="{{ url('/prescriptions/') }}" class="nav-link ">
                                     <i class="nav-icon fa fa-dashboard"></i>
                                     <p>
-                                        التقارير  
+                                        التقارير
                                         <i class="right fa fa-angle-left"></i>
                                     </p>
                                 </a>

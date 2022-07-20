@@ -18,13 +18,14 @@
 
                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
 
-                   
-                    <div class="kt-input-icon kt-input-icon--right kt-subheader__search kt-hidden">
-                        <input type="text" class="form-control" placeholder="بحث..." id="generalSearch">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right">
-                            <span><i class="flaticon2-search-1"></i></span>
-                        </span>
-                    </div>
+
+                    <div class="input-icon col-md-2">
+                        <input type="text" class="form-control" placeholder="بحث باستخدام الاسم"
+                           name='name_ar' @if( request()->name_ar) value={{request()->name_ar}} @endif/>
+                          <span>
+                              <i class="flaticon2-search-1 text-muted"></i>
+                          </span>
+                        </div>
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
         <!-- end:: Alert -->
             <div class="kt-portlet">
                 <div class="kt-portlet__head">
-                    
+
                     <div class="kt-portlet__head-toolbar">
                         <div class="kt-portlet__head-wrapper">
                             <div class="kt-portlet__head-actions">
@@ -67,7 +68,7 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_3">مؤكدة</a>
                         </li>
-                      
+
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#kt_tabs_5_5">ملغيه</a>
                         </li>
@@ -174,7 +175,7 @@
                                     <th>الطبيب</th>
                                     <th>القسم</th>
                                     <th>التاريخ/الوقت</th>
-                                   
+
                                     <th colspan="2">الإجراء</th>
                                 </tr>
                                 </thead>
@@ -209,7 +210,7 @@
                             </table>
                             <!--end: Datatable -->
                         </div>
-                       
+
                         <div class="tab-pane" id="kt_tabs_5_5" role="tabpanel">
                             <!--begin: Datatable -->
                             <table class="table table-striped- table-bordered  table-primary text-center table-checkable  kt_table_1">

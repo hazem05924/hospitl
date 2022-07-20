@@ -15,13 +15,14 @@
                     <h3 class="kt-subheader__title">قائمة الوثائق</h3>
 
                     <span class="kt-subheader__separator kt-subheader__separator--v"></span>
-                   
-                    <div class="kt-input-icon kt-input-icon--right kt-subheader__search kt-hidden">
-                        <input type="text" class="form-control" placeholder="بحث..." id="generalSearch">
-                        <span class="kt-input-icon__icon kt-input-icon__icon--right">
-                            <span><i class="flaticon2-search-1"></i></span>
-                        </span>
-                    </div>
+
+                    <div class="input-icon col-md-2">
+                        <input type="text" class="form-control" placeholder="بحث باستخدام الاسم"
+                           name='name_ar' @if( request()->name_ar) value={{request()->name_ar}} @endif/>
+                          <span>
+                              <i class="flaticon2-search-1 text-muted"></i>
+                          </span>
+                        </div>
                 </div>
             </div>
         </div>
@@ -66,7 +67,7 @@
                                 <th>الوصف</th>
                                 <th>الوثائق</th>
                                 <th colspan="2">الإجراء</th>
-                                
+
                             </tr>
                         </thead>
 
@@ -93,7 +94,7 @@
                                             <button type="submit" class="btn btn-danger btn-md"> حذف <i
                                                     class="fa fa-trash" aria-hidden="true"></i></button>
                                         </form>
-                                       
+
                                     </td>
 
                                 </tr>

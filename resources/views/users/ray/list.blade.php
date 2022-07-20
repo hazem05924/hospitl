@@ -25,12 +25,13 @@
                         </h3>
                         <span class="kt-subheader__separator kt-subheader__separator--v"></span>
 
-                        <div class="kt-input-icon kt-input-icon--left kt-subheader__search kt-hidden ">
-                            <input type="text" class="form-control" placeholder="بحث ..." id="generalSearch">
-                            <span class="kt-input-icon__icon kt-input-icon__icon--left">
-                                <span><i class="flaticon2-search-1"></i></span>
-                            </span>
-                        </div>
+                        <div class="input-icon col-md-2">
+                            <input type="text" class="form-control" placeholder="بحث باستخدام الاسم"
+                               name='name_ar' @if( request()->name_ar) value={{request()->name_ar}} @endif/>
+                              <span>
+                                  <i class="flaticon2-search-1 text-muted"></i>
+                              </span>
+                            </div>
                         <!-- begin:: Alert -->
                         @if (session()->has('success'))
                             <div class="alert alert-light alert-elevate" role="alert">
@@ -84,7 +85,7 @@
                                     <td>{{ $ray->address }}</td>
                                     <td>{{ $ray->email }}</td>
                                     @if ($ray->medical_degree=='نشط'||$ray->medical_degree=='غير نشط')
-                                        
+
                                     @if ($ray->medical_degree=='نشط')
                                     <td><span class="badge bg-success">{{ $ray->medical_degree }}</span></td>
                                     @endif
@@ -95,7 +96,7 @@
                                     <td> <span class="badge bg-warning">{{ $ray->medical_degree }}</span></td>
                                     @endif
                                     @else
-                                    
+
                                     <td> <span class="badge bg-info">{{ $ray?$ray->medical_degree:'null' }}</span></td>
                                     @endif
                                     <td>

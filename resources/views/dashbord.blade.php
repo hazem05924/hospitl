@@ -669,14 +669,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.control-sidebar -->
 
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-         كلية  فلسطين  التقنية قسم  الحاسوب
+    <footer class="main-footer ">
+        <strong style="text-align-last: center">    جميع الحقوق محفوظة  {{ now()->year }}-{{ now()->year+1 }} &copy;<a href="#">{{ env('APP_NAME') }}</a>.</strong>
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> {{ env('APP_VERSION') }}
         </div>
-        <!-- Default to the left -->
-        <strong> &copy; 2021-2021 <a href=""> طلاب مشروع  التخرج  </a>.</strong>
-    </footer>
+       </footer>
     </div>
     <!-- ./wrapper -->
 
