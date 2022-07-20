@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Department;
 use App\Appointment;
+use App\Doctor;
 use App\Finance;
 use App\Payment;
 use App\TimeSchedule;
@@ -86,14 +87,14 @@ class AppointmentController extends Controller
             ->with('confirmedAppointments', Appointment::where('status', 'مؤكدة')->get())
             ->with('cancelledAppointments', Appointment::where('status', 'ملغيه')->get())
             ->with('appointments', Appointment::all())
-            ->with('doctors', User::doctor()->get())
+            ->with('doctors', Doctor::get())
             ->with('patients', User::patient()->get());
     }
 
     public function create()
     {
         return view('appointments.create')
-            ->with('doctors', User::doctor()->get())
+            ->with('doctors', Doctor::get())
             ->with('patients', User::patient()->get())
             ->with('departments', Department::all())
             ->with('timeschedules', TimeSchedule::all());
@@ -113,7 +114,7 @@ class AppointmentController extends Controller
         }
         Appointment::create([
             'patient_id' => $request->patient,
-            'doctor_id' => $request->doctor,
+            'doctor_id' => $request->doctor_id,
             'department_id' => $request->department,
             'date' => $request->date,
             'time' => $request->timeSlots,
@@ -129,7 +130,7 @@ class AppointmentController extends Controller
                 $commission = $request->commission;
             }
             $payment = Payment::create([
-                'doctor_id' => $request->doctor,
+                'doctor_id' => $request->doctor_id,
                 'patient_id' => $request->patient,
                 'sub_total' => $request->price,
                 'taxes' => 0,
@@ -150,13 +151,13 @@ class AppointmentController extends Controller
         // flash message
         session()->flash('success', 'تمت الإضافة بنجاح.');
         // redirect user
-        return redirect(route('appointments.index'));
+        return redirect(route('home'));
     }
 
     public function edit(Appointment $Appointment)
     {
-        return view('appointments.create')
-            ->with('doctors', User::doctor()->get())
+        return view('appointments.book')
+            ->with('doctors',Doctor::get())
             ->with('patients', User::patient()->get())
             ->with('departments', Department::all())
             ->with('timeschedules', TimeSchedule::all())
@@ -168,7 +169,7 @@ class AppointmentController extends Controller
 
         $Appointment->update([
             'patient_id' => $request->patient,
-            'doctor_id' => $request->doctor,
+            'doctor_id' => $request->doctor_id,
             'department_id' => $request->department,
             'date' => $request->date,
             'time' => $request->timeSlots,
@@ -200,5 +201,13 @@ class AppointmentController extends Controller
     public function appointmentsForDoctor(User $doctor)
     {
         return view('appointments.list')->with('doctor', $doctor);
+    }
+
+    public function viewBook(){
+        return view('appointments.book')
+            ->with('doctors', Doctor::get())
+            ->with('patients', User::patient()->get())
+            ->with('departments', Department::all())
+            ->with('timeschedules', TimeSchedule::all());
     }
 }

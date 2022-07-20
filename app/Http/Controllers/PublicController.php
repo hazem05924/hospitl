@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -14,8 +15,8 @@ class PublicController extends Controller
 
     public function getUserByUserType(Request $request)
     {
-        if ($request->usertype == 'doctor') {
-            $users = User::doctor()->get();
+        if ($request->usertype == 'doctor_id') {
+            $users = Doctor::get();
             $TS = collect();
             foreach ($users as $user) {
                 $TS->push($user);

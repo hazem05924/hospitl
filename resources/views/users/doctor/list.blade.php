@@ -77,7 +77,7 @@
                                     <td>{{ $doctor->mobile }}</td>
                                     <td><a href="{{route('indexPatient',['id'=>$doctor->id])}}"
                                         class="btn btn-md btn-success" aria-hidden="true">({{$doctor->patients_count}})
-                                        المرضى</a> </td>
+                                        مريض/ة</a> </td>
                                     <td>
                                         @foreach ($doctor->departments as $de)
                                             <span

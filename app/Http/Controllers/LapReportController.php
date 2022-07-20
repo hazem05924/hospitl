@@ -34,7 +34,7 @@ class LapReportController extends Controller
         return view('lap.lapreports.create')
             ->with('patients',User::patient()->get())
             ->with('templates',LapTemplate::all())
-            ->with('doctors',User::doctor()->get());
+            ->with('doctors',Doctor::get());
     }
 
     public function store(Request $request)
@@ -71,7 +71,7 @@ class LapReportController extends Controller
             ->with('lapreport',$lapreport)
             ->with('patients',User::patient()->get())
             ->with('templates',LapTemplate::all())
-            ->with('doctors',User::doctor()->get());
+            ->with('doctors',Doctor::get());
     }
 
     public function update(Request $request, LapReport $lapreport)

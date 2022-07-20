@@ -30,7 +30,7 @@ class PrescriptionController extends Controller
         return view('prescriptions.create')
             ->with('patients', User::patient()->get())
             ->with('medicines', Medicine::all())
-            ->with('doctors', User::doctor()->get());
+            ->with('doctors', Doctor::get());
     }
 
     public function store(Request $request)
@@ -86,7 +86,7 @@ class PrescriptionController extends Controller
        $age = Carbon::parse($prescription->patient->birth_date)->age;
         return view('prescriptions.create')
             ->with('patients', User::patient()->get())
-            ->with('doctors', User::doctor()->get())
+            ->with('doctors', Doctor::get())
             ->with('medicines', Medicine::all())
             ->with('age', $age)
             ->with('prescription', $prescription);

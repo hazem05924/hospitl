@@ -110,7 +110,7 @@
                                         <div class="input-group-prepend"><span class="input-group-text"><i
                                                     class="fa fa-heading"></i></span></div>
                                         @if (isset($doctors))
-                                            <select class="form-control" name="doctor" id="doctor">
+                                            <select class="form-control" name="doctor_id" id="doctor_id">
                                                 <option>إختر الطبيب</option>
                                                 @foreach ($doctors as $doctor)
                                                     <option value="{{ $doctor->id }}"

@@ -16,4 +16,20 @@ class Doctor extends Model
     public function patients(){
         return $this->hasMany(User::class);
     }
+    public function appointment(){
+        return $this->hasMany(Appointment::class);
+
+    }
+    public function document(){
+        return $this->hasMany(Document::class);
+    }
+    public function lapReport(){
+        return $this->hasMany(LapReport::class);
+    }
+    public function payment(){
+        return $this->hasMany(Payment::class);
+    }
+    public function prescription(){
+        return $this->belongsTo(Prescription::class);
+    }
 }

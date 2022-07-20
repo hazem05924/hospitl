@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\rayController;
 use App\Http\Controllers\testController;
@@ -21,7 +22,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {return view('front_end.index');});
+Route::get('/', function () {return view('front_end.index');}) ;
 Route::get('/specialty', function () { return view('front_end.specialty');});
 Route::get('/servicese', function () { return view('front_end.services');});
 Route::get('/dates', function () { return view('front_end.dates');});
@@ -52,7 +53,7 @@ Route::resource('/users/ticketout', 'TicketoutController');
 Route::resource('/patients', 'PatientController');
 Route::resource('/users/patients', 'PatientController');
 
-Route::resource('/ray', 'RayController');
+
 Route::resource('/users/ray', 'RayController');
 
 Route::resource('/care', 'CareController');
@@ -118,3 +119,4 @@ Route::get('/getuserbyusertype/', 'PublicController@getUserByUserType')->name('g
 
 // Route::get('/create/patients/{id}', [PatientController::class, 'createPatient'])->name('createPatient');
 Route::get('/index/patients/{id}', [PatientController::class, 'indexPatient'])->name('indexPatient');
+Route::get('/books', [AppointmentController::class ,'viewBook'])->name('viewBook');

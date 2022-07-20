@@ -80,7 +80,7 @@
                                             </span>
                                         </div>
                                         @if (isset($doctors))
-                                        <select class="form-control text-black" name="doctor" id="doctor">
+                                        <select class="form-control text-black" name="doctor_id" id="doctor_id">
                                             <option>إختيار الطبيب</option>
                                             @foreach ($doctors as $doctor)
                                                 <option value="{{ $doctor->id }}"

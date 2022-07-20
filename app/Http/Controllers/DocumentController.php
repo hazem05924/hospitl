@@ -25,7 +25,7 @@ class DocumentController extends Controller
     {
         return view('documents.create')
             ->with('patients', User::patient()->get())
-            ->with('doctors', User::doctor()->get());
+            ->with('doctors', Doctor::get());
     }
 
     public function store(Request $request)
@@ -59,7 +59,7 @@ class DocumentController extends Controller
     {
         return view('documents.create')
             ->with('patients', User::patient()->get())
-            ->with('doctors', User::doctor()->get())
+            ->with('doctors', Doctor::get())
             ->with('document', $document);
     }
 

@@ -31,12 +31,12 @@ class TimeScheduleController extends Controller
 
 
 
-    public function createtimeScheduleForDoctor(User $doctor)
+    public function createtimeScheduleForDoctor(Doctor $doctor)
     {
         return view('timeschedules.create')->with('doctor', $doctor);
     }
 
-    public function timeSchedulesForDoctor(User $doctor)
+    public function timeSchedulesForDoctor(Doctor $doctor)
     {
         return view('timeschedules.list')->with('doctor', $doctor);
     }
@@ -102,7 +102,7 @@ class TimeScheduleController extends Controller
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'duration' => $request->duration,
-            'user_id' => $request->doctor,
+            'user_id' => $request->doctor_id,
         ]);
 
         // flash message
