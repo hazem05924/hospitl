@@ -45,6 +45,9 @@
                     <li class="nav-item">
                         <a href="{{url('/servicese')}}" class="nav-link">من نحن</a>
                     </li>
+                    <li class="nav-item">
+                     <a href="{{route('viewBook')}}" class="nav-link">حجز موعد</a>
+                 </li>
       
                     <button type="button" class="btn btn-outline-success"><a href="{{route('login')}}" class="nav-link">تسجيل الدخول </a></button>
                 

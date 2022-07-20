@@ -46,6 +46,9 @@
                     <li class="nav-item">
                         <a href="{{url('/servicese')}}" class="nav-link">من نحن</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{route('viewBook')}}" class="nav-link">حجز موعد</a>
+                    </li>
                         <button type="button" class="btn btn-outline-success"><a href="{{route('login')}}" class="nav-link">تسجيل الدخول </a></button>
 
 
@@ -190,25 +193,11 @@
     <!-- Bootstrap js -->
     <script src="asset/js/bootstrap.min.js"></script>
 
-    <script src="{{ asset('asset/js/crud.js') }}"></script>
 
-    <script>
-        function performStore() {
 
- let formData = new FormData();
-     formData.append('name',document.getElementById('name').value);
-     formData.append('email',document.getElementById('email').value);
-     formData.append('mobile',document.getElementById('mobile').value);
-     formData.append('number_of_people',document.getElementById('number_of_people').value);
-     formData.append('time',document.getElementById('time').value);
-     formData.append('date',document.getElementById('date').value);
-     formData.append('nots',document.getElementById('nots').value);
+ 
 
- store('/book',formData);
 
- }
-
-   </script>
     </body>
 </html>
 
