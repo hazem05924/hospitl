@@ -156,7 +156,7 @@ class AppointmentController extends Controller
 
     public function edit(Appointment $Appointment)
     {
-        return view('appointments.book')
+        return view('appointments.create')
             ->with('doctors',Doctor::get())
             ->with('patients', User::patient()->get())
             ->with('departments', Department::all())
